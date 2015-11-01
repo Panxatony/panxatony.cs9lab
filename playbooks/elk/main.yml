@@ -1,0 +1,12 @@
+---
+- hosts: elk-server
+  sudo: yes
+
+  #vars_files:
+  #  - vars.yml
+
+  roles:
+    - geerlingguy.repo-epel
+    - bertvv.el7
+    - panxatony.ntp
+    - panxatony.freeipa

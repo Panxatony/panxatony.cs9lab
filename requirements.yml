@@ -1,0 +1,8 @@
+---
+- src: geerlingguy.firewall
+- src: geerlingguy.repo-epel
+- src: panxatony.ntp
+- src: panxatony.freeipa
+- src: panxatony-freeipa-client
+- src: bertvv.el7
+- src: sfromm.omdistro
