@@ -1,0 +1,22 @@
+---
+# defaults file for panxatony.freeipa
+
+#server FreeIPA variables
+freeipa_server_ip: 192.168.60.5
+freeipa_hostname: ipasrv.cs9demo.lab
+freeipa_password: secretPass
+freeipa_alias: ipasrv
+freeipa_domain_search: cs9demo.lab
+freeipa_kerberos_realm_name: CS9DEMO.LAB
+freeipa_directory_manager_password: topSecret
+freeipa_dns_forwarder_ip: 8.8.8.8
+freeipa_ldap_search_base: "dc=cs9demo,dc=lab"
+freeipa_ldap_user_search_base: "cn=users,dc=cs9demo,dc=lab"
+freeipa_ldap_group_search_base: "cn=groups,dc=cs9demo,dc=lab"
+freeipa_ldap_default_bind_dn: "uid=admin,cn=users,dc=cs9demo,dc=lab"
+freeipa_ldap_uri: "ldaps://ipasrv.cs9demo.lab/"
+freeipa_ldap_sudo_search_base: "ou=SUDOers,dc=cs9demo,dc=lab"
+freeipa_user_homedir: "/home"
+freeipa_gateway_ip: 192.168.71.2
+freeipa_vsphere_modify: false
+

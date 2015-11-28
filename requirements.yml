@@ -1,8 +1,30 @@
 ---
-- src: geerlingguy.firewall
-- src: geerlingguy.repo-epel
-- src: panxatony.ntp
-- src: panxatony.freeipa
-- src: panxatony-freeipa-client
-- src: bertvv.el7
-- src: sfromm.omdistro
+
+# OMD-Client Role - add system to OMD
+ - src: https://github.com/Panxatony/panxatony.omd-client.git
+   path: roles/
+
+# FreeIPA-Client Role - add system to FreeIPA
+ - src: https://github.com/Panxatony/panxatony.freeipa-client.git
+   path: roles/
+
+# FreeIPA Role - install FreeIPA
+ - src: https://github.com/Panxatony/panxatony.freeipa.git
+   path: roles/
+
+# Kibana Role - install Kibana
+ - src: https://github.com/Panxatony/panxatony.elk-kibana.git
+   path: roles/
+
+# ElasticSearch Role - install ElasticSearch
+ - src: https://github.com/Panxatony/panxatony.elk-elastic.git
+   path: roles/
+
+# ELK Common Role - install ELK Common
+ - src: https://github.com/Panxatony/panxatony.elk-common.git
+   path: roles/
+
+# NTP Role - Config NTP 
+ - src: https://github.com/Panxatony/panxatony.ntp.git
+   path: roles/
+

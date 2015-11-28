@@ -1,12 +1,20 @@
 ---
 - hosts: freeipa-server
-  remote_user: root
+  become: yes
+  become_user: root
 
-#  vars_files:
-#    - vars.yml
+#prompt for password
+  vars_prompt:
 
+  - name: "freeipa_password"
+    prompt: "Enter FreeIPA admin user password"
+    private: yes
+
+  - name: "freeipa_directory_manager_password"
+    prompt: "Enter FreeIPA Directory Manager password"
+    private: yes
+
+# execute roles
   roles:
-  #  - geerlingguy.repo-epel
-  #  - bertvv.el7
     - panxatony.ntp
     - panxatony.freeipa
