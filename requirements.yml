@@ -40,4 +40,6 @@
  - src: https://github.com/Panxatony/panxatony.nginx.git
    path: roles/
 
+# OMD Distro
+ - src: sfromm.omdistro
 

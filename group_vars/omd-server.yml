@@ -1,0 +1,142 @@
+---
+omdistro_use_ssl: yes
+omdistro_use_inventory: yes
+omdistro_notification_logging: 1
+#
+# SNMP related
+omdistro_no_snmpbulk_tag: nobulk
+omdistro_snmp_default_community: public
+omdistro_snmp_check_interval: [ ]
+omdistro_snmp_communities: [ ]
+#
+omdistro_scan_parents: no
+omdistro_site: local
+omdistro_site_config:
+    - { name: MULTISITE_COOKIE_AUTH, value: "on" }
+    - { name: PNP4NAGIOS,            value: "on" }
+    - { name: MKEVENTD,              value: "on" }
+omdistro_version: "1.30"
+omdistro_thruk_conf: [ ]
+omdistro_contacts: []
+omdistro_contactgroups: []
+omdistro_extra_host_conf:
+    max_check_attempts:
+        - '"3", ALL_HOSTS'
+omdistro_extra_service_conf:
+    max_check_attempts:
+        - '"3", ALL_HOSTS, ALL_SERVICES'
+omdistro_hostgroups: []
+omdistro_iftypes:
+    - 6
+    - 18
+    - 22
+    - 23
+    - 30
+    - 32
+    - 37
+    - 39
+    - 117
+    - 134
+    - 135
+omdistro_if_inventory_uses_description: no
+omdistro_if_inventory_uses_alias: no
+omdistro_ignored_checktypes:
+    - "df"
+    - "nfsmounts"
+omdistro_checkgroup_parameters:
+    if:
+        - "{'unit' : 'bit' }, [], ALL_HOSTS, ALL_SERVICES, {'comment': u'Show bits instead of bytes'}"
+omdistro_ignored_services: { }
+omdistro_ping_levels: { }
+omdistro_inventory_check:
+    interval: 1440
+    severity: 1
+omdistro_servicegroups:
+    - snmp
+    - tcp
+omdistro_mkeventd_rules:
+    - description: Fallback
+      autodelete: no
+      cancel_actions: []
+      drop: no
+      actions: []
+      disabled: no
+      match: ".*"
+omdistro_timeperiods:
+    24x7:
+        - sunday    00:00-24:00
+        - monday    00:00-24:00
+        - tuesday   00:00-24:00
+        - wednesday 00:00-24:00
+        - thursday  00:00-24:00
+        - friday    00:00-24:00
+        - saturday  00:00-24:00
+    weekday:
+        - monday    07:00-18:00
+        - tuesday   07:00-18:00
+        - wednesday 07:00-18:00
+        - thursday  07:00-18:00
+        - friday    07:00-18:00
+    extended:
+        - sunday    06:00-22:00
+        - monday    06:00-22:00
+        - tuesday   06:00-22:00
+        - wednesday 06:00-22:00
+        - thursday  06:00-22:00
+        - friday    06:00-22:00
+        - saturday  06:00-22:00
+    none: [ ]
+#
+# for wato contacts.mk
+omdistro_contact_host_notification_options: [ d, u, r, f, s ]
+omdistro_contact_service_notification_options: [ w, u, c, r, f, s ]
+omdistro_contact_notification_method: email
+omdistro_contact_notification_period: 24x7
+omdistro_contact_notifications_enabled: no
+#
+# for multisite wato users.mk
+omdistro_multisite_connector: ldap
+omdistro_multisite_user_locked: no
+omdistro_multisite_user_force_authuser: no
+omdistro_multisite_user_force_authuser_webservice: no
+omdistro_multisite_user_roles:
+  - user
+#
+# minimal apache-related vars
+omdistro_apache_documentroot: "{{ omdistro_apache_documentroot_default }}"
+omdistro_apache_serveradmin: "{{ omdistro_apache_serveradmin_default }}"
+omdistro_apache_errorlog: "{{ omdistro_apache_errorlog_default }}"
+omdistro_apache_transferlog: "{{ omdistro_apache_transferlog_default }}"
+omdistro_apache_confdir: "{{ omdistro_apache_confdir_default }}"
+#
+# the following serves only as an example
+# of what the netmon has/dictionary/mapping looks like.
+netmon:
+    devices:
+        - name: localhost
+          omdistro:
+              groups:
+                  - noc
+                  - core
+    groups:
+        noc:
+            name: NOC
+            descr: NOC Devices
+        core:
+            name: Core
+            descr: Core Devices
+        snmp:
+            name: SNMP
+            descr: SNMP enabled devices
+        tcp:
+            name: TCP
+            descr: CMK enabled devices
+        24x7:
+            name: 24x7
+            descr: 24 hours a day, 7 days a week
+        weekday:
+            name: Weekdays
+            descr: Business hours on weekdays
+        extended:
+            name: Extended
+            descr: Extended hours, 7 days a week
