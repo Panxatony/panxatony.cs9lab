@@ -17,6 +17,6 @@ freeipa_ldap_default_bind_dn: "uid=admin,cn=users,dc=cs9demo,dc=lab"
 freeipa_ldap_uri: "ldaps://ipasrv.cs9demo.lab/"
 freeipa_ldap_sudo_search_base: "ou=SUDOers,dc=cs9demo,dc=lab"
 freeipa_user_homedir: "/home"
-freeipa_gateway_ip: 192.168.71.2
-freeipa_vsphere_modify: false
+freeipa_gateway_ip: 192.168.60.2
+freeipa_vsphere_modify: true
 

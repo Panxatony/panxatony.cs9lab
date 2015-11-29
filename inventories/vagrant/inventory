@@ -1,7 +1,7 @@
 [freeipa-server]
 192.168.60.5
 
-[omd-seerver]
+[omd-server]
 192.168.60.6
 
 [elk-server]
