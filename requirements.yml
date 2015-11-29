@@ -29,5 +29,15 @@
    path: roles/
 
 # CentOS Base Role 
- - src: https://github.com/Panxatony/panxatony.el-common
+ - src: https://github.com/Panxatony/panxatony.el-common.git
    path: roles/
+
+# Logstash Role 
+ - src: https://github.com/Panxatony/panxatony.logstash.git
+   path: roles/
+
+# Nginx Role 
+ - src: https://github.com/Panxatony/panxatony.nginx.git
+   path: roles/
+
+
