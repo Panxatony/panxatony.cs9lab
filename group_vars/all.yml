@@ -1,3 +1,7 @@
 ---
 # defaults file for panxatony.freeipa
 
+freeipa_server_ip: 192.168.60.5
+freeipa_domain_search: cs9demo.lab
+freeipa_principal_user: admin
+freeipa_principal_password: password

@@ -4,16 +4,17 @@
   become_user: root
   gather_facts: true
 
-#prompt for password
-  vars_prompt:
+#vars_files:
+  #  - vars.yml
+  #vars_prompt:
 
-  - name: "freeipa_password"
-    prompt: "Enter FreeIPA admin user password"
-    private: yes
+  #- name: "freeipa_password"
+  #  prompt: "Enter FreeIPA admin user password"
+  #  private: yes
 
-  - name: "freeipa_directory_manager_password"
-    prompt: "Enter FreeIPA Directory Manager password"
-    private: yes
+  #- name: "freeipa_directory_manager_password"
+  #  prompt: "Enter FreeIPA Directory Manager password"
+  #  private: yes
 
 # execute roles
   roles:
