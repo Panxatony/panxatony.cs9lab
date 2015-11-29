@@ -2,11 +2,13 @@
 - hosts: omd-server
   become: yes
   become_user: root
+  gather_facts: true
 
   #vars_files:
   #  - vars.yml
 
- roles:
+  roles:
+   - panxatony.el-common
    - panxatony.ntp
    - panxatony.freeipa-client
  #  - sfromm.omdistro

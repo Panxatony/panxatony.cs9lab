@@ -2,6 +2,7 @@
 - hosts: freeipa-server
   become: yes
   become_user: root
+  gather_facts: true
 
 #prompt for password
   vars_prompt:
@@ -16,5 +17,6 @@
 
 # execute roles
   roles:
+    - panxatony.el-common
     - panxatony.ntp
     - panxatony.freeipa

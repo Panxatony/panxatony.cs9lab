@@ -28,3 +28,6 @@
  - src: https://github.com/Panxatony/panxatony.ntp.git
    path: roles/
 
+# CentOS Base Role 
+ - src: https://github.com/Panxatony/panxatony.el-common
+   path: roles/

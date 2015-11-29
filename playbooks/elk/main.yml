@@ -2,10 +2,16 @@
 - hosts: elk-server
   become: yes
   become_user: root
+  gather_facts: true
 
   #vars_files:
   #  - vars.yml
 
   roles:
+    - panxatony.el-common
     - panxatony.ntp
-    - panxatony.freeipa
+    - panxatony.elk-common
+    - panxatony.nginx
+    - panxatony.elk-elastic
+    - panxatony.elk-kibana
+    - panxatony.logstash
