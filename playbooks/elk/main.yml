@@ -4,18 +4,6 @@
   #become_user: root
   gather_facts: true
 
-  #vars_files:
-  #  - vars.yml
-  vars_prompt:
-
-  - name: "freeipa_password"
-    prompt: "Enter FreeIPA admin user password"
-    private: yes
-
-  - name: "freeipa_directory_manager_password"
-    prompt: "Enter FreeIPA Directory Manager password"
-    private: yes
-
   roles:
     - panxatony.el-common
     - panxatony.ntp
