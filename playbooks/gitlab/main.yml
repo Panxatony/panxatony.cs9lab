@@ -1,1 +1,11 @@
 ---
+- hosts: gitlab-server
+  #become: yes
+  #become_user: root
+  gather_facts: true
+
+  roles:
+    - panxatony.el-common
+    - panxatony.ntp
+    - panxatony.freeipa-client
+    - panxatony.gitlab
