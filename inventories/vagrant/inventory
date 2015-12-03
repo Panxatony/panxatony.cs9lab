@@ -7,3 +7,5 @@
 [elk-server]
 192.168.60.7
 
+[gitlab-server]
+192.168.60.8

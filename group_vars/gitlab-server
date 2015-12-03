@@ -1,0 +1,26 @@
+---
+
+# General config.
+gitlab_external_url: "https://gitlab.cs9demo.lab/"
+gitlab_git_data_dir: "/var/opt/gitlab/git-data"
+
+# SSL Configuration.
+gitlab_redirect_http_to_https: "true"
+gitlab_ssl_certificate: "/etc/gitlab/ssl/gitlab.crt"
+gitlab_ssl_certificate_key: "/etc/gitlab/ssl/gitlab.key"
+
+# SSL Self-signed Certificate Configuration.
+gitlab_create_self_signed_cert: true
+gitlab_self_signed_cert_subj: "/C=DE/ST=Hessen/L=Melsungen/O=IT/CN=gitlab.cs9demo.lab"
+
+# LDAP Configuration.
+
+## cs9lab ldap
+gitlab_ldap_enabled: "true"
+gitlab_ldap_host: "{{ freeipa_server_ip }}"
+gitlab_ldap_port: "389"
+gitlab_ldap_uid: "sAMAccountName"
+gitlab_ldap_method: "plain"
+gitlab_ldap_bind_dn: "{{ freeipa_ldap_default_bind_dn }}"
+gitlab_ldap_password: "{{ freeipa_password }}"
+gitlab_ldap_base: "{{ freeipa_ldap_search_base }}"

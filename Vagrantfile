@@ -23,6 +23,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     omd.vm.network :private_network, ip: "192.168.60.6"
   end
 
+  # Gitlab server.
+  config.vm.define "gitlab" do |gitlab|
+    gitlab.vm.hostname = "gitlab.cs9demo.lab"
+    gitlab.vm.box = "geerlingguy/centos7"
+    gitlab.vm.network :private_network, ip: "192.168.60.8"
+  end
+
   # FreeIPA server.
   config.vm.define "freeipa" do |freeipa|
     freeipa.vm.hostname = "ipasrv.cs9demo.lab"
