@@ -1,4 +1,6 @@
 ---
+
+
 omdistro_use_ssl: yes
 omdistro_use_inventory: yes
 omdistro_notification_logging: 1
@@ -10,7 +12,7 @@ omdistro_snmp_check_interval: [ ]
 omdistro_snmp_communities: [ ]
 #
 omdistro_scan_parents: no
-omdistro_site: local
+#omdistro_site: local
 omdistro_site_config:
     - { name: MULTISITE_COOKIE_AUTH, value: "on" }
     - { name: PNP4NAGIOS,            value: "on" }

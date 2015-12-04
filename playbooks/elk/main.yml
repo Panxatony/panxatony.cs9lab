@@ -13,3 +13,4 @@
     - panxatony.elk-elastic
     - panxatony.elk-kibana
     - panxatony.logstash
+    - panxatony.omd-client

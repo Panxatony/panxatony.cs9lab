@@ -43,3 +43,7 @@
 # OMD Distro
  - src: sfromm.omdistro
 
+# Gitlab Role 
+ - src: https://github.com/Panxatony/panxatony.gitlab.git
+   path: roles/
+
