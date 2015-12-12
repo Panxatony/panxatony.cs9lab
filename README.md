@@ -1,31 +1,52 @@
-Role Name
+Lab Environment used by CS9 installations 
 =========
 
-A brief description of the role goes here.
+Vagrant and Ansible Playbooks used to install Lab Environment. Actual relase includes
+
+* mgmtsrv.cs9demo.local: VM used as Management Station and FreeIPA admin client
+* elksrv.cs9demo.local: VM used as Central Log Server with ElasticSearch, Kibana and Logstash
+* omdsrv.cs9demo.local: VM used as System Monitoring Server with OMD (check_mk)
+* gitlab.cs9demo.local: VM used as DevOps System with GitLab
+* ipasrv.cs9demo.local: VM used as Central Directory & Authentication Server with FreeIPA
+
+t.b.d.
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+* Vagrant (https://www.vagrantup.com)
+* VirtualBox (https://www.virtualbox.org)
+* Ansible (http://www.ansible.com)
 
-Role Variables
+t.b.d.
+
+Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+Check ```inventories/vagrant/group_vars``` files
+
+t.b.d.
 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+Used Ansible Roles listed in ```requirements.yml```
 
-Example Playbook
+t.b.d.
+
+Usage
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+Installation and usage:
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+- Clone Git repository ```git clone https://github.com/Panxatony/panxatony.cs9lab.git```
+- Modify ```ansible.cfg```
+- Modify ```Vagrantfile``` (optional)
+- Install Ansible roles ``ànsible-galaxy install -r requirements.yml```
+- Start Vagrant installation with ```vagrant up```
+- Execute Configuration Playbook with ``ànsible-playbook -u vagrant configure-lab.yml```
+
+t.b.d.
 
 License
 -------
@@ -35,4 +56,4 @@ BSD
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Panxatony (http://macnemo.tv)
