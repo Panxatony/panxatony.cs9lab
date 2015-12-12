@@ -42,9 +42,9 @@ Installation and usage:
 - Clone Git repository ```git clone https://github.com/Panxatony/panxatony.cs9lab.git```
 - Modify ```ansible.cfg```
 - Modify ```Vagrantfile``` (optional)
-- Install Ansible roles ``ànsible-galaxy install -r requirements.yml```
+- Install Ansible roles ```ànsible-galaxy install -r requirements.yml```
 - Start Vagrant installation with ```vagrant up```
-- Execute Configuration Playbook with ``ànsible-playbook -u vagrant configure-lab.yml```
+- Execute Configuration Playbook with ```ànsible-playbook -u vagrant configure-lab.yml```
 
 t.b.d.
 
