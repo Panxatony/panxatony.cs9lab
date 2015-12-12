@@ -10,6 +10,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
   
   # ELK Server.
+  config.vm.define "mgmt" do |mgmt|
+    mgmt.vm.hostname = "mgmtsrv.cs9demo.local"
+    mgmt.vm.box = "geerlingguy/centos7"
+    mgmt.vm.network :private_network, ip: "192.168.60.4"
+  end
+
+  # ELK Server.
   config.vm.define "elk" do |elk|
     elk.vm.hostname = "elksrv.cs9demo.local"
     elk.vm.box = "geerlingguy/centos7"

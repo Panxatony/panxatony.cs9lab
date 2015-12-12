@@ -44,6 +44,8 @@ Installation and usage:
 - Modify ```Vagrantfile``` (optional)
 - Install Ansible roles ```ànsible-galaxy install -r requirements.yml```
 - Start Vagrant installation with ```vagrant up```
+- Add vagrant ssh public key to FreeIPA admin user
+- Create FreeIPA sudo Role for admin with !authenticate option
 - Execute Configuration Playbook with ```ànsible-playbook -u vagrant configure-lab.yml```
 
 t.b.d.

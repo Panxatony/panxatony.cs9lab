@@ -1,0 +1,13 @@
+---
+- hosts: mgmt-server
+  #become: yes
+  #become_user: root
+  gather_facts: true
+
+  tasks:
+    - name: install ipa cli
+      yum: name={{ item }} state=present
+      with_items:
+        - ipa-admintools
+      become: yes
+      become_user: root

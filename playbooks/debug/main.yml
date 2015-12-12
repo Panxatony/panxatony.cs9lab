@@ -1,9 +1,13 @@
 ---
-- hosts: all
+- hosts: omd-server
   #become: yes
   #become_user: root
   gather_facts: true
 
-  roles:
-    #- panxatony.debug
-    - panxatony.logstash-forwarder
+  tasks:
+    - name: create wato file
+      file: path=/opt/omd/sites/{{ omdistro_site }}/etc/check_mk/conf.d/wato/hosts.mk owner={{ omdistro_site }} group={{ omdistro_site }} mode=0644 state=touch
+      become: yes
+      become_user: root
+      tags:
+        - omd

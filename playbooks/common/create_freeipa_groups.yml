@@ -1,5 +1,5 @@
 ---
-- hosts: freeipa-env
+- hosts: freeipa-server
   #become: yes
   #become_user: admin
   gather_facts: true
@@ -11,6 +11,11 @@
     - create_freeipa_hostgroup: true
 
   tasks:
+    - name: create home folder
+      file: path=/home/admin state=directory mode=0755 owner=admin
+      become: yes
+      become_user: root
+
     - name: create freeipa usergroup
       command: ipa group-add {{ freeipa_usergroup }}
       when: (create_freeipa_usergroup == true) and (freeipa_usergroup is defined)
