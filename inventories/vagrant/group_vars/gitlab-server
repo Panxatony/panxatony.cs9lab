@@ -1,7 +1,7 @@
 ---
 
 # General config.
-gitlab_external_url: "https://gitlab.cs9demo.lab/"
+gitlab_external_url: "https://gitlab.cs9demo.local/"
 gitlab_git_data_dir: "/var/opt/gitlab/git-data"
 
 # SSL Configuration.
@@ -11,7 +11,7 @@ gitlab_ssl_certificate_key: "/etc/gitlab/ssl/gitlab.key"
 
 # SSL Self-signed Certificate Configuration.
 gitlab_create_self_signed_cert: true
-gitlab_self_signed_cert_subj: "/C=DE/ST=Hessen/L=Melsungen/O=IT/CN=gitlab.cs9demo.lab"
+gitlab_self_signed_cert_subj: "/C=DE/ST=Hessen/L=Melsungen/O=IT/CN=gitlab.cs9demo.local"
 
 # LDAP Configuration.
 
@@ -24,25 +24,3 @@ gitlab_ldap_method: "tls"
 gitlab_ldap_bind_dn: "{{ freeipa_ldap_default_bind_dn }}"
 gitlab_ldap_password: "password"
 gitlab_ldap_base: "{{ freeipa_ldap_search_base }}"
-
-freeipa_server_ip: 192.168.60.5
-freeipa_domain_search: cs9demo.lab
-freeipa_principal_user: admin
-freeipa_principal_password: password
-freeipa_add_hostgroup: false
-freeipa_server_ip: 192.168.60.5
-freeipa_hostname: ipasrv.cs9demo.lab
-freeipa_password: password
-freeipa_alias: ipasrv
-freeipa_domain_search: cs9demo.lab
-freeipa_kerberos_realm_name: CS9DEMO.LAB
-freeipa_directory_manager_password: password
-freeipa_dns_forwarder_ip: 8.8.8.8
-freeipa_ldap_search_base: "dc=cs9demo,dc=lab"
-freeipa_ldap_user_search_base: "cn=users,dc=cs9demo,dc=lab"
-freeipa_ldap_group_search_base: "cn=groups,dc=cs9demo,dc=lab"
-freeipa_ldap_default_bind_dn: "uid=admin,cn=users,dc=cs9demo,dc=lab"
-freeipa_ldap_uri: "ldaps://ipasrv.cs9demo.lab/"
-freeipa_ldap_sudo_search_base: "ou=SUDOers,dc=cs9demo,dc=lab"
-freeipa_user_homedir: "/home"
-freeipa_gateway_ip: 192.168.60.2

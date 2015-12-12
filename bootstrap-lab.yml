@@ -1,0 +1,11 @@
+---
+##########################################
+#
+# Deploy FreeIPA System
+#
+##########################################
+
+- include: playbooks/common/main.yml
+- include: playbooks/freeipa/main.yml
+- include: playbooks/common/add_host_to_freeipa.yml
+#- include: playbooks/common/create_freeipa_groups.yml

@@ -18,6 +18,5 @@
 
 # execute roles
   roles:
-    - panxatony.el-common
     - panxatony.ntp
     - panxatony.freeipa

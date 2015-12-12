@@ -1,0 +1,10 @@
+---
+- hosts: freeipa-clients
+  #become: yes
+  #become_user: root
+  gather_facts: true
+
+  tasks:
+  - name: add system to group
+    cmd:
+    when: add_system_to_group == True

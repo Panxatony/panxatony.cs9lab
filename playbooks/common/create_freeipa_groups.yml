@@ -1,0 +1,20 @@
+---
+- hosts: freeipa-env
+  #become: yes
+  #become_user: admin
+  gather_facts: true
+
+  vars:
+    - freeipa_usergroup: unspecified
+    - create_freeipa_usergroup: true
+    - freeipa_hostgroup: hostunspecified
+    - create_freeipa_hostgroup: true
+
+  tasks:
+    - name: create freeipa usergroup
+      command: ipa group-add {{ freeipa_usergroup }}
+      when: (create_freeipa_usergroup == true) and (freeipa_usergroup is defined)
+
+    - name: create freeipa hostgroup
+      command: ipa hostgroup-add {{ freeipa_hostgroup }}
+      when: create_freeipa_hostgroup == true and (freeipa_usergroup is defined)

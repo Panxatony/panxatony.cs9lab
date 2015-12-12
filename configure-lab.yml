@@ -1,7 +1,6 @@
 ---
 
 - include: playbooks/common/main.yml
-- include: playbooks/freeipa/main.yml 
 - include: playbooks/omd/main.yml
 - include: playbooks/elk/main.yml
 - include: playbooks/gitlab/main.yml

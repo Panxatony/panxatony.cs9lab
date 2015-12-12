@@ -5,8 +5,5 @@
   gather_facts: true
 
   roles:
-    - panxatony.el-common
-    - panxatony.ntp
-   # - panxatony.freeipa-client
     - panxatony.gitlab
     - panxatony.omd-client
