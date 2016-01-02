@@ -2,6 +2,7 @@
 - hosts: freeipa-server
   #become: yes
   #become_user: admin
+  remote_user: {{ freeipa_principal_user }}
   gather_facts: true
 
   vars:

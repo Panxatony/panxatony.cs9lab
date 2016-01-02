@@ -1,7 +1,7 @@
 ---
 
 - include: playbooks/common/main.yml
-#- include: playbooks/common/create_freeipa_groups.yml
+- include: playbooks/common/create_freeipa_groups.yml
 - include: playbooks/mgmt/main.yml
 - include: playbooks/omd/main.yml
 - include: playbooks/elk/main.yml

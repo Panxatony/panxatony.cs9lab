@@ -5,9 +5,10 @@
   gather_facts: true
 
   tasks:
-    - name: install ipa cli
+    - name: install ipa cli and sshpass
       yum: name={{ item }} state=present
       with_items:
         - ipa-admintools
+        - sshpass
       become: yes
       become_user: root
