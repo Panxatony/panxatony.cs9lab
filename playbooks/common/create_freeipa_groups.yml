@@ -2,7 +2,7 @@
 - hosts: freeipa-server
   #become: yes
   #become_user: admin
-  remote_user: {{ freeipa_principal_user }}
+  remote_user: "{{ freeipa_principal_user }}"
   gather_facts: true
 
   vars:
@@ -17,10 +17,10 @@
       become: yes
       become_user: root
 
-    - name: create freeipa usergroup
-      command: ipa group-add {{ freeipa_usergroup }}
-      when: (create_freeipa_usergroup == true) and (freeipa_usergroup is defined)
+    #- name: create freeipa usergroup
+    #  command: ipa group-add {{ freeipa_usergroup }}
+    #  when: (create_freeipa_usergroup == true) and (freeipa_usergroup is defined)
 
-    - name: create freeipa hostgroup
-      command: ipa hostgroup-add {{ freeipa_hostgroup }}
-      when: create_freeipa_hostgroup == true and (freeipa_usergroup is defined)
+    #- name: create freeipa hostgroup
+    #  command: ipa hostgroup-add {{ freeipa_hostgroup }}
+    #  when: create_freeipa_hostgroup == true and (freeipa_usergroup is defined)
